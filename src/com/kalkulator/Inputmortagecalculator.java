@@ -3,34 +3,34 @@ package com.kalkulator;
 import java.util.Scanner;
 
 public class Inputmortagecalculator {
+    static int decimal=100;
+    static int months=12;
 
-
-    public void inputPrincipal(){
+    public int inputPrincipal(){
         System.out.println("Principal: ");
         Scanner scaner=new Scanner(System.in);
-
-
         while (!scaner.hasNextInt()) scaner.next();
         int principal = scaner.nextInt();
-        System.out.println(principal);
         scaner.close();
+        return principal;
     }
-    public void inputRate() {
-        System.out.println("Rate: ");
+    public float inputRate() {
+        System.out.println("Rate (In years): ");
         Scanner scaner = new Scanner(System.in);
         while (!scaner.hasNextFloat()) scaner.next();
         float rate = scaner.nextInt();
-        rate= rate / 100 / 12;
-        System.out.print(rate);
+        rate= rate / decimal / months;
         scaner.close();
+        return rate;
     }
-    public void inputPeriod() {
+    public int inputPeriod() {
         System.out.println("Period: ");
         Scanner scaner = new Scanner(System.in);
         while (!scaner.hasNextInt()) scaner.next();
         int period = scaner.nextInt();
-        System.out.print(period);
         scaner.close();
+        return period;
     }
+
 
 }
