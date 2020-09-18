@@ -6,38 +6,37 @@ public class Inputmortagecalculator {
     static int decimal=100;
     static int months=12;
 
-    public int inputPrincipal(){
-        System.out.println("Principal: ");
-        Scanner scaner=new Scanner(System.in);
-        while (!scaner.hasNextInt()) scaner.nextLine();
-        int principal = scaner.nextInt();
-        scaner.close();
-        return principal;
-    }
+
+
+
+
+
+        
+
+
     public float inputRate() {
         System.out.println("Rate (In years): ");
-        Scanner scaner = new Scanner(System.in);
-        float rate = scaner.nextFloat();
-        while (!scaner.hasNextFloat()) {
-            scaner.nextLine();
-            rate = scaner.nextFloat();
-        }
+        Scanner scaner2 = new Scanner(System.in);
+        while (!scaner2.hasNextFloat()) scaner2.nextLine();
+        float rate= scaner2.nextFloat();
         rate= rate / decimal / months;
-        scaner.close();
+        scaner2.close();
         return rate;
     }
-    public int inputPeriod() {
+    public int inputPricipalAndPeriod() {
         System.out.println("Period: ");
         Scanner scaner = new Scanner(System.in);
+        while (!scaner.hasNextInt()) scaner.nextLine();
+        int  principal = scaner.nextInt();
+        float rate=inputRate();
+        while (!scaner.hasNextInt()) scaner.next();
         int period = scaner.nextInt();
-        while (!scaner.hasNextInt()){
-            scaner.nextLine();
-            period = scaner.nextInt();
-        }
-
         scaner.close();
-        return period;
+        return principal,period,rate;
     }
 
+    public static void main(String[] args) {
+        new Inputmortagecalculator().inputRate();
+    }
 
 }
