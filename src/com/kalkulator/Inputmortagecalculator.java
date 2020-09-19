@@ -1,17 +1,14 @@
 package com.kalkulator;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Inputmortagecalculator {
     static int decimal=100;
     static int months=12;
-
-
-
-
-
-
-        
+    List<Integer>lista=new ArrayList<Integer>(3);
 
 
     public float inputRate() {
@@ -28,11 +25,12 @@ public class Inputmortagecalculator {
         Scanner scaner = new Scanner(System.in);
         while (!scaner.hasNextInt()) scaner.nextLine();
         int  principal = scaner.nextInt();
-        float rate=inputRate();
         while (!scaner.hasNextInt()) scaner.next();
         int period = scaner.nextInt();
         scaner.close();
-        return principal,period,rate;
+        lista.add(0,principal);
+        lista.add(1,period);
+        return (lista);
     }
 
     public static void main(String[] args) {
