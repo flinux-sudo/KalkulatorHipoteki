@@ -5,7 +5,7 @@ public class Mortage {
     private float rate;
     private int period;
 
-    public int getPricipal() {
+  /*  public int getPricipal() {
         return pricipal;
     }
 
@@ -28,6 +28,8 @@ public class Mortage {
     public void setPeriod(int period) {
         this.period = period;
     }
+
+   */
 }
 
 
