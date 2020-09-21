@@ -1,17 +1,24 @@
 package com.kalkulator;
 
 
+import mortage.Mortage;
+
 public class Mortagecalculator {
-    Inputmortagecalculator calculator=new Inputmortagecalculator();
+    Mortage values = new Mortage();
+    Inputmortagecalculator input=new Inputmortagecalculator();
     public void calculateMortage(){
-        float mortage;
-        int principal =calculator.inputPrincipal();
-        float rate=calculator.inputRate();
-        int period=calculator.inputPeriod();
+        input.inputPricipalAndPeriod();
+        input.inputRate();
+        int principal =values.getPricipal();
+        float rate= values.getRate();
+        int period= values.getPeriod();
+
+
+
         float power= (float) Math.pow(1+rate,period);
         float multi= rate * power;
         float second=power-1;
-        mortage=principal * (multi/second);
+        float mortage = principal * (multi / second);
         System.out.println("Mortage: "+mortage);
 
 
